@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Passions+Conflict&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Allura";
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    background-image: url("https://i.pinimg.com/736x/3b/5e/c1/3b5ec1d165d96230ffe8823c053681ba.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding: 10px;
+    overflow: hidden;
+}
+.effect{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background:transparent;
+    transform-style: preserve-3d;
+    perspective: 900px;   
+}
+.effect .snow{
+    position:absolute;
+    color:white;
+    pointer-events: none;
+    animation: roi linear infinite ;
+    z-index: 1000;
+}
+@keyframes roi{
+    0%{
+        transform: translateY(-50px) translateZ(50px) rotate3d(1, 0.2, 0.3, 0deg);
+
+    }
+    25%{
+        transform: translateY(20vh) translateZ(300px) rotate3d(0.5, 1, 0.1, 90deg);
+    }
+    50%{
+        transform: translateY(50vh) translateZ(100px) rotate3d(0.1, 0.3, 1, 180deg);
+    }
+    100%{
+        transform:  translateY(100vh) translateZ(200px) rotate3d(0.7, 0.5, 0.2, 360deg);
+    }
+}
+.app{
+    width: 70%;
+    max-width: 350px;
+    min-height: 300px;
+    position: relative;
+    padding: 20px;
+    border: 5px inset white;
+    margin: auto;
+    filter: drop-shadow(15px 10px 5px rgb(51, 50, 50));
+}
+.app h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+.quiz{
+    position: relative;
+    width: 100%;
+    padding: 5px;
+}
+.quiz h2{
+    font-size: 30px;
+    margin: 10px 0 5px;
+}
+#answer-buttons{
+    width: 100%;
+}
+#answer-buttons .btn{
+    width: 100%;
+    margin: 15px 0;
+    text-align: left;
+    padding: 1px 10px;
+    font-size: 25px;
+    background:transparent;
+    display: block;
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid rgb(57, 54, 54);
+    transition: all 1s;
+}
+#answer-buttons .btn:hover:not([disabled]){
+    background-color: rgb(79, 77, 77);
+    color: aqua;
+    cursor: pointer;
+}
+#answer-buttons .btn:disabled{
+    cursor:no-drop;
+}
+.eleTrue{
+    color: rgb(64, 232, 100);
+}
+.eleFalse{
+    color: rgb(216, 119, 119);
+    text-decoration: line-through;
+}
+
+.nextBtn{
+    width: 150px;
+    height: 35px;
+    position: relative;
+    margin: 20px auto;
+    font-size: 22px;
+    display: block;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+}
+.nextBtn span{
+    position: absolute;
+    display: block;
+}
+.nextBtn span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,transparent,rgb(115, 183, 211),rgb(44, 66, 208));
+    filter: blur(0.5px);
+    animation: animate1 2s infinite linear ;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+.nextBtn span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,rgb(115, 183, 211),rgb(44, 66, 208));
+    filter: blur(0.5px);
+    animation: animate2 2s infinite linear ;
+    animation-delay: 3s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+.nextBtn span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left,transparent,rgb(115, 183, 211),rgb(44, 66, 208));
+    filter: blur(0.5px);
+    animation: animate3 2s infinite linear ;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+.nextBtn span:nth-child(4){
+    top: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top,transparent,rgb(115, 183, 211),rgb(44, 66, 208));
+    filter: blur(0.5px);
+    animation: animate4 2s infinite linear ;
+    animation-delay: 3s;
+}
+@keyframes animate4{
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: -100%;
+    }
+}
